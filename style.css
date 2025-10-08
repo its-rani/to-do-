@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #a989e0; /* soft cream/light grey background */
+  padding: 40px 20px;
+  color: #333;
+}
+
+/* Main Container */
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffffcc; /* semi-transparent white */
+  padding: 35px;
+  border-radius: 20px;
+  border: 1px solid #d0c4e5; /* soft purple border */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6b4ca0; /* muted purple */
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  gap: 12px;
+  background: #f0eafc; /* light pastel purple */
+  border-radius: 50px;
+  padding: 6px;
+  border: 1px solid #d0c4e5;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  padding: 14px 20px;
+  font-size: 16px;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+
+.btn-add {
+  background: #cda4f7; /* soft pastel purple */
+  color: #fff;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 26px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-add:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #cda4f7;
+}
+
+/* Filter/Delete Buttons */
+.todos-filter {
+  display: flex;
+  justify-content: space-between;
+  margin: 22px 0;
+}
+
+.todos-filter button {
+  background: #e3d9f5; /* soft lavender */
+  color: #333;
+  border-radius: 25px;
+  padding: 10px 18px;
+  border: 1px solid #d0c4e5;
+  transition: 0.3s;
+}
+
+.todos-filter button:hover {
+  background: #d4c3f0;
+}
+
+/* Task List */
+.todos-list {
+  list-style: none;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f0fa; /* pastel background */
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  font-size: 17px;
+}
+
+.todo-item:hover {
+  background: #e6def7;
+}
+
+.todo-item.completed {
+  color: #888;
+  text-decoration: line-through;
+  background: #ddd;
+}
+
+/* Task Text */
+.todo-item p {
+  flex-grow: 1;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+/* Action Buttons */
+.todo-actions button {
+  background: transparent;
+  font-size: 22px;
+  color: #6b4ca0;
+  margin-left: 12px;
+  transition: all 0.3s;
+}
+
+.todo-actions button:hover {
+  color: #a684d6;
+}
+
+.complete.active {
+  color: #3b9d9d; /* soft green for completed */
+}
+
+/* Filters at Bottom */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.dropbtn {
+  background: #cda4f7;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  background: #b88ee5;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f0eafc;
+  min-width: 160px;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 18px;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a.active {
+  background-color: #d4c3f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Scrollbar Styling */
+.todos-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.todos-list::-webkit-scrollbar-track {
+  background: #f0eafc;
+  border-radius: 8px;
+}
+
+.todos-list::-webkit-scrollbar-thumb {
+  background: #cda4f7;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .container {
+    padding: 25px;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
